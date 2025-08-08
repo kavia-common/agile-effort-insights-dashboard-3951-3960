@@ -53,14 +53,21 @@ export default function DemoChart() {
   }, []);
 
   return (
-    <section className="flex flex-col items-center py-20 bg-background">
-      <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-5 text-center">
+    <section className="flex flex-col items-center py-12 sm:py-20 bg-background">
+      <h2 className="text-xl xs:text-2xl md:text-3xl font-semibold text-primary mb-4 sm:mb-5 text-center">
         Demo Visualization
       </h2>
-      <div className="rounded-2xl shadow-fancy bg-secondary p-6 mx-auto border border-primary/20">
-        <canvas ref={canvasRef} width={320} height={120} />
+      <div className="rounded-2xl shadow-fancy bg-secondary p-3 xs:p-5 sm:p-6 mx-auto border border-primary/20 w-[90vw] max-w-lg">
+        <div className="flex justify-center">
+          <canvas
+            ref={canvasRef}
+            width={320}
+            height={120}
+            style={{ width: "80vw", maxWidth: 320, height: "120px" }}
+          />
+        </div>
       </div>
-      <p className="text-lg text-text opacity-80 mt-4 max-w-md text-center">
+      <p className="text-base xs:text-lg text-text opacity-80 mt-4 max-w-xs xs:max-w-md text-center">
         See how your sprint data can animate into actionable insights with a single click.
       </p>
     </section>

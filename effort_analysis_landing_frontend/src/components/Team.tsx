@@ -46,26 +46,25 @@ const agents = [
 
 // PUBLIC_INTERFACE
 export default function Team() {
-  /** Component for displaying agent or team showcase */
+  /** Component for displaying agent or team showcase, now fully responsive. */
   return (
-    <section id="agents" className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-text">
+    <section id="agents" className="max-w-7xl mx-auto px-3 sm:px-6 py-12">
+      <h2 className="text-2xl xs:text-3xl md:text-4xl font-bold text-center mb-7 sm:mb-12 text-text">
         Meet Your AI Crew
       </h2>
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 justify-center">
         {agents.map((a) => (
           <div
             key={a.name}
-            className="bg-secondary shadow-fancy rounded-2xl p-8 max-w-xs flex flex-col items-center border border-primary/20 hover:scale-105 transition-transform duration-250"
+            className="bg-secondary shadow-fancy rounded-2xl p-6 xs:p-8 w-full max-w-xs mx-auto flex flex-col items-center border border-primary/20
+              hover:scale-[1.035] transition-transform duration-250"
           >
             {a.avatar}
-            <h3 className="mt-4 text-xl font-semibold text-primary">
+            <h3 className="mt-3 xs:mt-4 text-lg xs:text-xl font-semibold text-primary">
               {a.name}
             </h3>
-            <span className="text-accent font-medium mb-2">
-              {a.role}
-            </span>
-            <p className="text-text opacity-80 text-center">{a.desc}</p>
+            <span className="text-accent font-medium mb-1 xs:mb-2">{a.role}</span>
+            <p className="text-text opacity-80 text-sm xs:text-base text-center">{a.desc}</p>
           </div>
         ))}
       </div>

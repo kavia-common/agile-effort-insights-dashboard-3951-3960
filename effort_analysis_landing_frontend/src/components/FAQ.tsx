@@ -26,26 +26,28 @@ const faqs = [
 
 // PUBLIC_INTERFACE
 export default function FAQ() {
-  /** Frequently asked questions accordion section */
+  /** Frequently asked questions accordion section, fully responsive */
   const [opened, setOpened] = useState<number | null>(0);
   return (
-    <section id="faq" className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-text">Frequently Asked Questions</h2>
+    <section id="faq" className="max-w-3xl mx-auto px-3 sm:px-6 py-10 sm:py-14">
+      <h2 className="text-2xl xs:text-3xl md:text-4xl font-bold text-center mb-7 sm:mb-10 text-text">
+        Frequently Asked Questions
+      </h2>
       <div className="max-w-2xl mx-auto divide-y divide-primary/20 rounded-xl bg-secondary shadow-fancy">
         {faqs.map((faq, i) => (
           <div key={i} className="">
             <button
-              className="w-full px-6 py-5 text-left focus:outline-none flex justify-between items-center"
+              className="w-full px-4 xs:px-6 py-4 xs:py-5 text-left focus:outline-none flex justify-between items-center"
               onClick={() => setOpened(opened === i ? null : i)}
               aria-expanded={opened === i}
               aria-controls={`faq-${i}`}
             >
-              <span className="text-lg font-medium text-primary">{faq.question}</span>
+              <span className="text-base xs:text-lg font-medium text-primary">{faq.question}</span>
               <span className="ml-4 text-accent text-xl">{opened === i ? "-" : "+"}</span>
             </button>
             <div
               id={`faq-${i}`}
-              className={`px-6 pb-5 transition-all duration-300 text-text ${
+              className={`px-4 xs:px-6 pb-4 xs:pb-5 transition-all duration-300 text-text text-sm xs:text-base ${
                 opened === i ? "max-h-40 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
               }`}
               aria-hidden={opened !== i}

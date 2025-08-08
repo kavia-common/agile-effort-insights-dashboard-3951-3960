@@ -45,23 +45,25 @@ const features = [
 
 // PUBLIC_INTERFACE
 export default function Features() {
-  /** This component displays feature highlight tiles. */
+  /** This component displays feature highlight tiles, fully responsive. */
   return (
-    <section id="features" className="container mx-auto px-4">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-text mb-12">
+    <section id="features" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <h2 className="text-2xl xs:text-3xl md:text-4xl font-bold text-center text-text mb-7 sm:mb-12">
         Key Features
       </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="bg-secondary rounded-2xl p-8 shadow-fancy hover:shadow-2xl transition-all duration-300 border border-primary/20 flex flex-col items-center text-center"
+            className="bg-secondary rounded-2xl p-6 xs:p-8 shadow-fancy hover:shadow-2xl transition-all duration-300 border border-primary/20 flex flex-col items-center text-center min-h-[250px]"
           >
             <div className="mb-4">{feature.icon}</div>
-            <h3 className="text-xl text-primary font-semibold mb-2">
+            <h3 className="text-lg sm:text-xl text-primary font-semibold mb-1 xs:mb-2">
               {feature.title}
             </h3>
-            <p className="text-text opacity-80">{feature.desc}</p>
+            <p className="text-text opacity-80 text-sm xs:text-base">
+              {feature.desc}
+            </p>
           </div>
         ))}
       </div>
