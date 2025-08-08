@@ -1,0 +1,4 @@
+{
+    "command": "npm run dev -- -p <port> -H <host>",
+    "working_directory": "/home/kavia/workspace/code-generation/agile-effort-insights-dashboard-3951-3960/effort_analysis_landing_frontend"
+}
